@@ -1,0 +1,10 @@
+{
+    "DESIGN_NAME": "cache",
+    "VERILOG_FILES": "dir::src/cache.v",
+    "CLOCK_PORT": "clk",
+    "CLOCK_PERIOD": 10.0,
+    "DIE_AREA": "0 0 1000 1000",
+    "FP_SIZING": "absolute",
+    "PL_TARGET_DENSITY": 0.40,
+    "ROUTING_CORES": 4
+}
