@@ -15,15 +15,10 @@ The design was rigorously tested using **Icarus Verilog** and **GTKWave/VCDrom**
 
 ### Test Scenarios in Action
 *Here are the waveform captures demonstrating the successful execution of the FSM and data transfer processes:*
+<img width="1469" height="801" alt="Ekran Resmi 2026-08-21 17 05 24" src="https://github.com/user-attachments/assets/775cb62b-3e03-401f-8331-3e59bf1098bc" />
+<img width="1469" height="798" alt="Ekran Resmi 2026-08-21 17 05 01" src="https://github.com/user-attachments/assets/b965dd0b-1add-4ccd-ba88-66180a1ae136" />
+<img width="1465" height="799" alt="Ekran Resmi 2026-08-21 17 04 45" src="https://github.com/user-attachments/assets/4cc3631f-9216-4e9f-9862-b808ca306fc9" />
 
-![Cache Hit and Miss Operations](Ekran%20Resmi%202026-08-21%2017.05.24.jpg)
-*Figure 1: Cache Miss followed by an immediate Cache Hit, showing the precise address parsing and data fetching.*
-
-![Latency and Data Transfer](Ekran%20Resmi%202026-08-21%2017.05.01.jpg)
-*Figure 2: The `delay_counter` in action, successfully passing `128'h4444...1111` dummy data after 10 clock cycles.*
-
-![Complete System Overview](Ekran%20Resmi%202026-08-21%2017.04.45.jpg)
-*Figure 3: A full system overview of the testbench, showcasing stable clock generation and synchronized `ready` signals without simulation hangs.*
 
 ## ⚙️ Physical Design (RTL-to-GDSII)
 
