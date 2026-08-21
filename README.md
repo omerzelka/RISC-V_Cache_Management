@@ -38,7 +38,7 @@ The `cache.v` module was successfully synthesized into a physical layout using t
 ### Final Layout (GDSII)
 The synthesis, floorplanning, placement, and routing were completed without any Linter errors. The resulting `.gds` file was inspected using **KLayout**.
 
-![KLayout GDSII View](Ekran%20Resmi%202026-08-21%2017.58.29.png)
+<img width="1940" height="1654" alt="image" src="https://github.com/user-attachments/assets/2638b6cc-4cf8-441f-ab01-fefb7271ebd2" />
 *Figure 4: The final physical layout of the L1 Cache module, displaying the placement boundaries and routing layers.*
 
 ## 🛠️ How to Run
