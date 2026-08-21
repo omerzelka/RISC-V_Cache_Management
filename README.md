@@ -34,15 +34,5 @@ The `cache.v` module was successfully synthesized into a physical layout using t
 The synthesis, floorplanning, placement, and routing were completed without any Linter errors. The resulting `.gds` file was inspected using **KLayout**.
 
 <img width="1940" height="1654" alt="image" src="https://github.com/user-attachments/assets/2638b6cc-4cf8-441f-ab01-fefb7271ebd2" />
-*Figure 4: The final physical layout of the L1 Cache module, displaying the placement boundaries and routing layers.*
+*The final physical layout of the L1 Cache module, displaying the placement boundaries and routing layers.*
 
-## 🛠️ How to Run
-
-### 1. Simulation (macOS / Linux)
-Ensure you have `iverilog` installed.
-```bash
-# Compile the files
-iverilog -o sim_cache cache.v main_memory.v testbench.v
-
-# Execute the simulation
-vvp sim_cache
