@@ -28,11 +28,13 @@ This repository contains the complete hardware engineering cycle of an **L1 Cach
 ## 📂 Directory Structure
 
 ```text
+cache_management/
 ├── src/
 │   ├── cache.v           # L1 Cache module (Synthesizable RTL)
 │   ├── main_memory.v     # Main memory latency & data simulation macro
-│   └── testbench.v       # Linear testbench for verification
-├── config.json           # OpenLane configuration for physical synthesis
+|   ├── testbench.v       # Linear testbench for verification 
+│   └── config.json       # OpenLane configuration for physical synthesis
+├── sim_cache_management.vcd
 ├── README.md             
 └── .gitignore
 
