@@ -1,11 +1,11 @@
 <div align="center">
   <h1>L1 Cache & Main Memory Controller</h1>
-  <p><em>RTL Design, Simulation, and Physical Synthesis (RTL-to-GDSII) of a Memory Hierarchy</em></p>
+  <p><b>RTL Design, Simulation, and Physical Synthesis (RTL-to-GDSII) of a Memory Hierarchy</b></p>
 
-  [![Language](https://img.shields.io/badge/Language-Verilog-blue.svg)](#)
-  [![Flow](https://img.shields.io/badge/ASIC_Flow-OpenLane-green.svg)](#)
-  [![PDK](https://img.shields.io/badge/PDK-Sky130-red.svg)](#)
-  [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](#)
+  ![Verilog](https://img.shields.io/badge/Verilog-101E3E?style=for-the-badge&logo=verilog&logoColor=white)
+  ![RISC-V](https://img.shields.io/badge/RISC--V-000000?style=for-the-badge&logo=riscv&logoColor=white)
+  ![OpenLane](https://img.shields.io/badge/OpenLane-00599C?style=for-the-badge)
+  ![SKY130](https://img.shields.io/badge/SKY130_PDK-4B32C3?style=for-the-badge)
 </div>
 
 ---
@@ -74,3 +74,8 @@ The synthesis, floorplanning, placement, and routing were completed without any 
 <img width="1940" height="1654" alt="image" src="https://github.com/user-attachments/assets/2638b6cc-4cf8-441f-ab01-fefb7271ebd2" />
 *The final physical layout of the L1 Cache module, displaying the placement boundaries and routing layers.*
 
+---
+
+## 👨‍💻 Developer
+**Ömer Zelka**  
+*Gebze Technical University, Computer Engineering*
