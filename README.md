@@ -1,3 +1,41 @@
+<div align="center">
+  <h1>L1 Cache & Main Memory Controller</h1>
+  <p><em>RTL Design, Simulation, and Physical Synthesis (RTL-to-GDSII) of a Memory Hierarchy</em></p>
+
+  [![Language](https://img.shields.io/badge/Language-Verilog-blue.svg)](#)
+  [![Flow](https://img.shields.io/badge/ASIC_Flow-OpenLane-green.svg)](#)
+  [![PDK](https://img.shields.io/badge/PDK-Sky130-red.svg)](#)
+  [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](#)
+</div>
+
+---
+
+## 🚀 Overview
+
+This repository contains the complete hardware engineering cycle of an **L1 Cache and Main Memory Controller**. The project transitions from architectural logic and **FSM** design in Verilog, overcoming complex simulator-level race conditions (Phantom Delta-Cycle Loops), to successfully generating a physical layout via the **OpenLane** flow using the **SkyWater 130nm PDK**.
+
+---
+
+## 🧠 Architecture & Features
+
+* **Custom FSM (Finite State Machine):** Robust state transitions (`IDLE`, `COMPARE`, `ALLOCATE`, `WRITE_MEM`) for accurate cache operations.
+* **Latency Simulation:** The `main_memory` module includes an intentional 10-clock-cycle delay mechanism to realistically simulate the speed gap between CPU and RAM.
+* **Write-Through Policy:** Handles data updates directly through the hierarchy.
+* **Continuous Assignment Resolution:** Output signals (`mem_ready`, `mem_req`, `cpu_ready`) are decoupled from the `always @(*)` FSM blocks using `assign` statements to prevent simulator deadlocks.
+
+---
+
+## 📂 Directory Structure
+
+```text
+├── src/
+│   ├── cache.v           # L1 Cache module (Synthesizable RTL)
+│   ├── main_memory.v     # Main memory latency & data simulation macro
+│   └── testbench.v       # Linear testbench for verification
+├── config.json           # OpenLane configuration for physical synthesis
+├── README.md             
+└── .gitignore
+
 This repository contains the RTL design, simulation, and physical synthesis (RTL-to-GDSII) of an **L1 Cache and Main Memory Controller**, written in **Verilog**. 
 
 The project demonstrates a complete hardware engineering cycle: starting from writing the architectural logic, overcoming complex simulator-level race conditions, and successfully pushing the design through the **OpenLane** flow to generate a physical layout using the **SkyWater 130nm PDK**.
