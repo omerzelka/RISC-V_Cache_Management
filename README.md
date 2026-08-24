@@ -28,14 +28,16 @@ This repository contains the complete hardware engineering cycle of an **L1 Cach
 ## 📂 Directory Structure
 
 ```text
+cache_management/
 ├── src/
 │   ├── cache.v           # L1 Cache module (Synthesizable RTL)
 │   ├── main_memory.v     # Main memory latency & data simulation macro
-│   └── testbench.v       # Linear testbench for verification
-├── config.json           # OpenLane configuration for physical synthesis
+|   ├── testbench.v       # Linear testbench for verification 
+│   └── config.json       # OpenLane configuration for physical synthesis
+├── sim_cache_management.vcd
 ├── README.md             
 └── .gitignore
-
+```
 This repository contains the RTL design, simulation, and physical synthesis (RTL-to-GDSII) of an **L1 Cache and Main Memory Controller**, written in **Verilog**. 
 
 The project demonstrates a complete hardware engineering cycle: starting from writing the architectural logic, overcoming complex simulator-level race conditions, and successfully pushing the design through the **OpenLane** flow to generate a physical layout using the **SkyWater 130nm PDK**.
@@ -52,11 +54,32 @@ The project demonstrates a complete hardware engineering cycle: starting from wr
 The design was rigorously tested using **Icarus Verilog** and **GTKWave/VCDrom**. The linear testbench (`testbench.v`) simulates three core scenarios: Cache Miss, Cache Hit, and Write-Through.
 
 ### Test Scenarios in Action
-*Here are the waveform captures demonstrating the successful execution of the FSM and data transfer processes:*
-<img width="1465" height="799" alt="Ekran Resmi 2026-08-21 17 04 45" src="https://github.com/user-attachments/assets/4cc3631f-9216-4e9f-9862-b808ca306fc9" />
-<img width="1469" height="798" alt="Ekran Resmi 2026-08-21 17 05 01" src="https://github.com/user-attachments/assets/b965dd0b-1add-4ccd-ba88-66180a1ae136" />
-<img width="1463" height="53" alt="image" src="https://github.com/user-attachments/assets/9b733bc0-4f88-4ef6-897e-4121dee25a51" />
+*To control Word-Aligned, the Testbench input:*
+```text
+cpu_addr = 32'h000000A4;  (line 71)
+```
+*32'h000000A4 is equal to 164 in decimal form. However, 164 is not a word initial value; it must be a multiple of 16. Therefore, the program takes 164 modulo 16 and gives us the result 10, which is the index of RAM in main_memory.*
+```text
+assign mem_addr = {cpu_addr[31:4] , 4'b0000};
+```
 
+*As shown below, I modified the 10th index of RAM to distinguish our own value.*
+```text
+	integer i; // Dummy Data
+	initial begin
+		for(i = 0; i < 16; i = i + 1) begin
+			ram[i] = {32'h44444444, 32'h33333333, 32'h22222222, 32'h11111111};
+		end
+		ram[10] = {32'h41234123, 32'h34123412, 32'h23412341, 32'h12341234};
+	end
+```
+
+
+
+*Here are the waveform captures demonstrating the successful execution of the FSM and data transfer processes:*
+<img width="1465" height="773" alt="Ekran Resmi 2026-08-24 18 32 29" src="https://github.com/user-attachments/assets/7a5eb67a-d1fa-4a75-895e-c7c3dc098f3d" />
+<img width="1455" height="745" alt="Ekran Resmi 2026-08-24 18 33 11" src="https://github.com/user-attachments/assets/a5351e56-c988-4d84-ac46-7d5740b89755" />
+<img width="1465" height="50" alt="Ekran Resmi 2026-08-24 18 33 30" src="https://github.com/user-attachments/assets/743222e1-9d6c-4f82-90b8-68faff2b8aee" />
 
 ## ⚙️ Physical Design (RTL-to-GDSII)
 
