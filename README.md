@@ -63,6 +63,18 @@ cpu_addr = 32'h000000A4;  (line 71)
 assign mem_addr = {cpu_addr[31:4] , 4'b0000};
 ```
 
+*As shown below, I modified the 10th index of RAM to distinguish our own value.*
+```text
+	integer i; // Dummy Data
+	initial begin
+		for(i = 0; i < 16; i = i + 1) begin
+			ram[i] = {32'h44444444, 32'h33333333, 32'h22222222, 32'h11111111};
+		end
+		ram[10] = {32'h41234123, 32'h34123412, 32'h23412341, 32'h12341234};
+	end
+```
+
+
 
 *Here are the waveform captures demonstrating the successful execution of the FSM and data transfer processes:*
 <img width="1465" height="773" alt="Ekran Resmi 2026-08-24 18 32 29" src="https://github.com/user-attachments/assets/7a5eb67a-d1fa-4a75-895e-c7c3dc098f3d" />
