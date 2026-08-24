@@ -36,8 +36,8 @@ module cache(
 	
 	wire hit = ((valid_bit == 1'b1) && (stored_tag == tag));
 	
-	assign mem_addr = {cpu_addr[31:4] , 4'b0000}; // Mod(%) 0f 16
-	assign mem_wdata = cpu_wdata;
+	assign mem_addr = {cpu_addr[31:4] , 4'b0000}; // Mod(%) 0f 16 to get 128 bit Cache Line
+	assign mem_wdata = cpu_wdata; // Data goes from CPU to Cache and MainMemory
 	
 	
 	wire [127:0] current_cache_line = data_array[index];
