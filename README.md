@@ -37,7 +37,7 @@ cache_management/
 ├── sim_cache_management.vcd
 ├── README.md             
 └── .gitignore
-
+```
 This repository contains the RTL design, simulation, and physical synthesis (RTL-to-GDSII) of an **L1 Cache and Main Memory Controller**, written in **Verilog**. 
 
 The project demonstrates a complete hardware engineering cycle: starting from writing the architectural logic, overcoming complex simulator-level race conditions, and successfully pushing the design through the **OpenLane** flow to generate a physical layout using the **SkyWater 130nm PDK**.
