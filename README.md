@@ -55,10 +55,9 @@ The design was rigorously tested using **Icarus Verilog** and **GTKWave/VCDrom**
 
 ### Test Scenarios in Action
 *Here are the waveform captures demonstrating the successful execution of the FSM and data transfer processes:*
-<img width="1465" height="799" alt="Ekran Resmi 2026-08-21 17 04 45" src="https://github.com/user-attachments/assets/4cc3631f-9216-4e9f-9862-b808ca306fc9" />
-<img width="1469" height="798" alt="Ekran Resmi 2026-08-21 17 05 01" src="https://github.com/user-attachments/assets/b965dd0b-1add-4ccd-ba88-66180a1ae136" />
-<img width="1463" height="53" alt="image" src="https://github.com/user-attachments/assets/9b733bc0-4f88-4ef6-897e-4121dee25a51" />
-
+<img width="1465" height="773" alt="Ekran Resmi 2026-08-24 18 32 29" src="https://github.com/user-attachments/assets/7a5eb67a-d1fa-4a75-895e-c7c3dc098f3d" />
+<img width="1455" height="745" alt="Ekran Resmi 2026-08-24 18 33 11" src="https://github.com/user-attachments/assets/a5351e56-c988-4d84-ac46-7d5740b89755" />
+<img width="1465" height="50" alt="Ekran Resmi 2026-08-24 18 33 30" src="https://github.com/user-attachments/assets/743222e1-9d6c-4f82-90b8-68faff2b8aee" />
 
 ## ⚙️ Physical Design (RTL-to-GDSII)
 
