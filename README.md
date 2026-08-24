@@ -54,6 +54,10 @@ The project demonstrates a complete hardware engineering cycle: starting from wr
 The design was rigorously tested using **Icarus Verilog** and **GTKWave/VCDrom**. The linear testbench (`testbench.v`) simulates three core scenarios: Cache Miss, Cache Hit, and Write-Through.
 
 ### Test Scenarios in Action
+*To control Word-Aligned, the Testbench input:*
+<img width="457" height="208" alt="Ekran Resmi 2026-08-24 18 37 12" src="https://github.com/user-attachments/assets/bb7dc3fb-55bf-49f5-b135-1110f461f5a6" />
+*
+
 *Here are the waveform captures demonstrating the successful execution of the FSM and data transfer processes:*
 <img width="1465" height="773" alt="Ekran Resmi 2026-08-24 18 32 29" src="https://github.com/user-attachments/assets/7a5eb67a-d1fa-4a75-895e-c7c3dc098f3d" />
 <img width="1455" height="745" alt="Ekran Resmi 2026-08-24 18 33 11" src="https://github.com/user-attachments/assets/a5351e56-c988-4d84-ac46-7d5740b89755" />
